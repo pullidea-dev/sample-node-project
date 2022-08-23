@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - echo Installing Mocha...
+      - echo Installing pm2...
       - npm install -g pm2
   pre_build:
     commands:
@@ -13,14 +13,14 @@ phases:
       - npm install
   build:
     commands:
-      - pm2 server.js
+      - pm2 app.js
   post_build:
     commands:
       - echo Build completed on `date`
 # Include only the files required for your application to run.
-artifacts:
-  files:
-    - src/index.js
-    - src/app.js
-    - package.json
-    - node_modules/**/*
+# artifacts:
+#   files:
+#     - src/index.js
+#     - src/app.js
+#     - package.json
+#     - node_modules/**/*
