@@ -13,7 +13,7 @@ phases:
       - npm install
   build:
     commands:
-      - pm2 app.js
+      - pm2 start app.js --name swapbox-sample
   post_build:
     commands:
       - echo Build completed on `date`
